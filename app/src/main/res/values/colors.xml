@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--marvel palette http://www.color-hex.com/color-palette/6563-->
     <color name="colorPrimary">#e23636</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#518cca</color>
