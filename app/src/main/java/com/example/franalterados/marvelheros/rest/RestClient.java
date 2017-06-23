@@ -2,7 +2,7 @@ package com.example.franalterados.marvelheros.rest;
 
 import com.example.franalterados.marvelheros.R;
 import com.example.franalterados.marvelheros.app.App;
-import com.example.franalterados.marvelheros.rest.services.HerosService;
+import com.example.franalterados.marvelheros.rest.services.HeroService;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.squareup.okhttp.OkHttpClient;
@@ -19,7 +19,7 @@ public class RestClient {
 
     private static final String BASE_URL = App.INSTANCE.getApplicationContext().getString(R.string.urlApi);
 
-    private HerosService herosService;
+    private HeroService heroService;
 
     public RestClient() {
         ObjectMapper mapper = new ObjectMapper();
@@ -45,10 +45,10 @@ public class RestClient {
     }
 
     private void initServices(RestAdapter restAdapter) {
-        herosService = restAdapter.create(HerosService.class);
+        heroService = restAdapter.create(HeroService.class);
     }
 
-    public HerosService getHerosService() {
-        return herosService;
+    public HeroService getHeroService() {
+        return heroService;
     }
 }
