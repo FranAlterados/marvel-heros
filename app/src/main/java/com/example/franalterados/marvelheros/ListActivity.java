@@ -1,6 +1,7 @@
 package com.example.franalterados.marvelheros;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -93,7 +94,9 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void clickHero(Hero hero) {
-        //TODO
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra("hero", hero);
+        startActivity(intent);
     }
 
 

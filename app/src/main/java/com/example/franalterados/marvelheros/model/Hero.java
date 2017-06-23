@@ -1,9 +1,11 @@
 package com.example.franalterados.marvelheros.model;
 
+import java.io.Serializable;
+
 /**
  * Created by FranAlterados on 23/6/17.
  */
-public class Hero {
+public class Hero implements Serializable {
 
     String name;
     String photo;
