@@ -2,7 +2,7 @@ package com.example.franalterados.marvelheros.business;
 
 import com.example.franalterados.marvelheros.app.App;
 import com.example.franalterados.marvelheros.model.Hero;
-import com.example.franalterados.marvelheros.rest.model.DTOHero;
+import com.example.franalterados.marvelheros.rest.model.DTOSuperheroes;
 
 import java.util.List;
 
@@ -16,10 +16,10 @@ import retrofit.client.Response;
 public class HeroController {
 
     public static void getAllHeros(final BusinessCallback<List<Hero>> callback) {
-        App.getRestClient().getHeroService().getHeros(new Callback<List<DTOHero>>() {
+        App.getRestClient().getHeroService().getHeros(new Callback<DTOSuperheroes>() {
             @Override
-            public void success(List<DTOHero> dtoHeros, Response response) {
-                List<Hero> lstHero = HeroMapper.lstDtoHeroToLstHero(dtoHeros);
+            public void success(DTOSuperheroes dtoHeros, Response response) {
+                List<Hero> lstHero = HeroMapper.lstDtoHeroToLstHero(dtoHeros.getSuperheroes());
                 callback.success(lstHero, response);
             }
 
