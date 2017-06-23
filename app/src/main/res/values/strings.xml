@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Marvel Heros</string>
+    <string name="urlApi">https://api.myjson.com</string>
 </resources>

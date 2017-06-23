@@ -5,13 +5,21 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.example.franalterados.marvelheros"
+        applicationId "com.franalterados.marvelheros"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
-
+    }
+    packagingOptions {
+        exclude 'META-INF/services/com.fasterxml.jackson.core.JsonFactory'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/notice'
+        exclude 'META-INF/license'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
     }
     buildTypes {
         release {
@@ -23,9 +31,32 @@ android {
 
 }
 
+repositories {
+    mavenCentral()
+    maven { url 'http://guardian.github.com/maven/repo-releases' }
+    maven {
+        credentials {
+            username "desarrollodinamic"
+            password "dinamic"
+        }
+        url "http://artifactory.dinamicarea.es/artifactory/dinamic-comun"
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.+'
-
+    compile 'dasrecyclerview:dasrecyclerview:2.8.1'
+    compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2'
+    compile 'dastools:dastools:1.1.0'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:cardview-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.retrofit:converter-jackson:1.9.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
+    compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
